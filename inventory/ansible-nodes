@@ -8,5 +8,9 @@ node00
 node00
 [apps]
 node00
+[webservers]
+node01
+[dbservers]
+node01
 #[appserver]
 #node02
