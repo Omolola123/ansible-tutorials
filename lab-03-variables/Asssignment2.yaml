@@ -1,0 +1,21 @@
+- hosts: node00
+  gather_facts: true
+  vars:
+    my_name: Lola
+
+vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: no
+    - name: password
+      prompt: What is your password?
+    
+    - name: Display all variables/facts known for a host
+      debug:
+      var: hostvars[inventory_hostname]
+
+- hosts: all
+  name: Setting up the hostnames
+  tasks:
+  - hostname: name="{{ inventory_hostname }}"
+    become: yes
