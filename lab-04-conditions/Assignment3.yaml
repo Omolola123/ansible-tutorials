@@ -10,10 +10,10 @@ hosts: node00
     with_items:
     - mlocate
 
-  - name: Install strace
-    package: name={{item}} state=latest
-    with_items:
-    - strace
+  #- name: Install strace
+    #package: name={{item}} state=latest
+    #with_items:
+    #- strace
 
 - hosts: webservers
   become: true
