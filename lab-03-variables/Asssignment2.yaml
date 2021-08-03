@@ -3,7 +3,7 @@
   vars:
     my_name: Lola
 
-vars_prompt:
+- vars_prompt:
     - name: username
       prompt: What is your username?
       private: no
