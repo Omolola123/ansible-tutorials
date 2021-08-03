@@ -1,0 +1,28 @@
+hosts: web
+gather_facts: true
+become: true
+
+tasks:
+- name: Create Directory
+  file:
+    path: /home/ec2-user/testdirAnsible
+    state: directory
+
+- copy:
+  src: /root/ansible-tutorials
+  dest: /tmp/ansible-nodes
+
+- name: Get Nodes
+  shell: cat /ntmp/ansible-nodes
+
+-yum:
+    pkg: httpd
+    state: installed
+
+-yum: 
+    pkg: git
+    state: installed
+
+-git:
+    repo: 
+    dest: /tmp version=HEAD
