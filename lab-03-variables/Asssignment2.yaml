@@ -35,7 +35,7 @@
 
     - debug:
         msg: "User input: {{user}}"
- - debug:
+    - debug:
         var: result.stdout_lines[0]
         
     - debug:
