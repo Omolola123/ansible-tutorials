@@ -1,19 +1,18 @@
----
-- hosts: webservers
-  become: true
+- hosts: node00
+  gather_facts: false
+
   tasks:
-  - name: Install package
-    yum: 
-      pkg: {{item}} 
+  - name: packages
+    yum:
+      pkg: {{ item }}
       state: installed
     with_items:
-      - mlocate
-      - strace
-      - git
-      - php
-      - java-1.8.0-openjdk 
+    - mlocate
+    - strace
+    - java8
+    - php5
 
-  - name: New Folder
+  - name: folders
     file:
       path: /home/ec2-user/{{ item }}
       state: directory
