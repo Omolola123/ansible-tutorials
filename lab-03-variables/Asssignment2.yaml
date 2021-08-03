@@ -10,7 +10,7 @@
     - name: password
       prompt: What is your password?
     
-    - name: Display all variables/facts known for a host
+    - name: Display myname
       debug:
       var: hostvars[inventory_hostname]
 
