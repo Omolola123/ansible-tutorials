@@ -54,5 +54,8 @@
         var: hostvars[inventory_hostname].ansible_all_ipv4_addresses[0]
 
     - name: Set permissions
-        shell: chmod 644 /tmp/{{user}}.txt
+      file:
+        path: /tmp/{{user}}
+        state: touch
+        mode: u=rw,g=r,o=r
 
