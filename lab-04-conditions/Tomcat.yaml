@@ -3,7 +3,7 @@
 
   tasks:
   - name: install JDK
-  yum:
+    yum:
     name: jre-1.8.0-openjdk
 
   - name: extract tomcat 
