@@ -1,4 +1,4 @@
-- hosts: node01
+- hosts: node00
   gather_facts: true
   vars:
     my_name: Chandan
