@@ -1,0 +1,33 @@
+---
+hosts: node00
+  gather_facts: false
+  tasks:
+  - name: Install latest mlocate and update locate database (RHEL)
+  yum: name=* state=latest
+  
+  - name: Install mlocate (RHEL)
+    package: name={{item}} state=latest
+    with_items:
+    - mlocate
+
+  - name: Install strace
+    package: name={{item}} state=latest
+    with_items:
+    - strace
+
+- hosts: webservers
+  become: true
+  tasks:
+  - name: Install default-jdk
+    yum: name=java-1.8.0-openjdk state=present
+
+- name: install packages
+    apt: name={{ item }} update_cache=yes state=latest
+    with_items:
+      - php5-cli
+      - php5-curl
+      - php5-fpm
+      - php5-intl
+      - php5-json
+      - php5-mcrypt
+      - php5-sqlite
