@@ -12,3 +12,14 @@
     - strace
     - git
     - php5
+
+  - name: New Folder
+    file:
+      path: /home/ec2-user/{{ item }}
+      state: directory
+    with_items:
+    - yelp
+    - google
+    - apple
+    - yahoo
+    - allstate
