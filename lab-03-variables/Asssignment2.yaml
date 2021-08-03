@@ -8,6 +8,20 @@
     prompt: Enter Username
     private: no
     
+  tasks:
+    - apt:
+        pkg: apache2
+        state: installed
+      when: ansible_distribution == "Ubuntu"
+    
+    - yum:
+        pkg: httpd
+        state: installed
+      when: ansible_distribution == "RedHat"
 
+    - yum:
+        pkg: httpd
+        state: installed
+      when: ansible_distribution == "Amazon"
 
 
