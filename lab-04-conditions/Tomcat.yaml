@@ -1,6 +1,5 @@
-- name: install tomcat server
-hosts: web
-become: true
+- hosts: web
+  become: true
 
 tasks:
 - name: install JDK
