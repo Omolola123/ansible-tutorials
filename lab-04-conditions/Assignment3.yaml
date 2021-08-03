@@ -4,7 +4,7 @@
   tasks:
   - name: packages
     yum:
-      pkg: {{ item }}
+      pkg: "{{ item }}"
       state: installed
     with_items:
     - mlocate
