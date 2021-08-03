@@ -1,4 +1,4 @@
-name: install tomcat server
+- name: install tomcat server
 hosts: web
 become: true
 
