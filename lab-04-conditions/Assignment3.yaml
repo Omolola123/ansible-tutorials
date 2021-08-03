@@ -12,7 +12,7 @@
     - mlocate
     - strace
     - git
-    - php5
+    - php
 
   - name: New Folder
     file:
