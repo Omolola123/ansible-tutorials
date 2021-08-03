@@ -3,10 +3,11 @@
   become: true
   tasks:
   - name: Install default-jdk
-    yum: name=java-1.8.0-openjdk state = present
+    yum: name=java-1.8.0-openjdk 
+    state = installed
   
-  - name: Install mlocate (RHEL)
-    package: name={{item}} state=latest
+  - name: Install mlocate 
+    package: name={{item}} state=installed
     with_items:
     - mlocate
     - strace
