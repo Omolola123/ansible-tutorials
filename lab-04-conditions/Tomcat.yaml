@@ -1,7 +1,7 @@
 - hosts: web
   become: true
 
-tasks:
+  tasks:
 - name: install JDK
   yum:
     name: jre-1.8.0-openjdk
