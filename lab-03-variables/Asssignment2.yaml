@@ -35,5 +35,24 @@
 
     - debug:
         msg: "User input: {{user}}"
+ - debug:
+        var: result.stdout_lines[0]
+        
+    - debug:
+        msg: "{{ my_name }}"
+      when: my_name == "beCloudReady"
 
+    - debug:
+        var: hostvars[inventory_hostname].ansible_all_ipv4_addresses[0]
+
+    - name: Change hostname
+      hostname:
+        name: "{{my_name}}" 
+
+    - name: Display some variables/facts known for a host
+      debug:
+        var: hostvars[inventory_hostname].ansible_all_ipv4_addresses[0]
+
+    - name: Set permissions
+        shell: chmod 644 /tmp/{{user}}.txt
 
