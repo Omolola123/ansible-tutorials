@@ -2,17 +2,16 @@
 - hosts: webservers
   become: true
   tasks:
-  - name: Install default-jdk
-    yum: name=java-1.8.0-openjdk 
-    state = installed
-  
-  - name: Install mlocate 
-    package: name={{item}} state=installed
+  - name: Install package
+    yum: 
+      pkg: {{item}} 
+      state: installed
     with_items:
-    - mlocate
-    - strace
-    - git
-    - php
+      - mlocate
+      - strace
+      - git
+      - php
+      - java-1.8.0-openjdk 
 
   - name: New Folder
     file:
