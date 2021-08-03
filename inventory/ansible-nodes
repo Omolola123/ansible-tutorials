@@ -12,5 +12,5 @@ node00
 node00
 [dbservers]
 node00
-#[appserver]
-#node02
+[appserver]
+node00
