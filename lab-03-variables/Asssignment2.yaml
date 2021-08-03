@@ -17,5 +17,5 @@
 - hosts: all
   name: Setting up the hostnames
   tasks:
-  - hostname: name="{{ inventory_hostname }}"
+  - hostname: name="{{hostname}}"
     become: yes
