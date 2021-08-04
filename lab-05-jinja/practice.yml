@@ -1,0 +1,8 @@
+hosts: apps
+gather_facts: true
+become: true
+tasks:
+  - name: Installing mysql in node02
+    yum:
+      pkg: mysql
+      state: installed
