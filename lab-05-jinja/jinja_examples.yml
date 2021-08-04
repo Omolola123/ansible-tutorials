@@ -1,6 +1,6 @@
 - hosts: webservers
   vars:
-    user_name: Chandan
+    user_name: Lola
   tasks:
     - template:
         src: example-template.j2
@@ -9,13 +9,13 @@
 
 - hosts: webservers
   vars:
-    user_name: Chandan
+    user_name: Lola
   tasks:
     - template:
         src: example-template-2.j2
         dest: /tmp/jinta-loop-output
 
     - copy:
-        src: example-template.j2
-        dest: /tmp/cp-output
-      debug: var=play_hosts
+      src: example-template.j2
+      dest: /tmp/cp-output
+    - debug: var=play_hosts
